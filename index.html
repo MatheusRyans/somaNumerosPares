@@ -10,7 +10,7 @@
 
 <body>
 
-    <h1>Soma de numeros pares</h1>
+    <h1>Soma de numeros positivos pares</h1>
 
     <div><input type="number" class="input" id="inputNumber" placeholder="Digite um numero"></div>
     <br>
@@ -36,7 +36,7 @@
             let resultado = 0;
 
 
-            if (inputNumber == 0 || inputNumber == "") {
+            if (inputNumber <= 0 || isNaN(inputNumber)) {
                 alert("Por favor, insira um número válido.");
                 document.getElementById("resultado").innerHTML = ""
                 return;
@@ -45,7 +45,7 @@
                 for (let i = 0; i <= inputNumber; i += 2) {
                     resultado += i;
                 }
-                
+
                 document.getElementById("resultado").innerHTML = "A soma dos números pares até " + inputNumber + " é: " + resultado;
 
             }
