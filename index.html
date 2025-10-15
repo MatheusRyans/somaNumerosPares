@@ -22,22 +22,38 @@
 
     <script>
 
+
+
+
         function calcularSoma() {
 
             //inicialização de variáveis, usando a função parseInt para converter o valor do input em número inteiro, garantindo assim quem ele seja lido como numero e não como string
             let inputNumber = parseInt(document.getElementById("inputNumber").value);
-            let resultado = 0;
+
             //Para evitar que o resultado anterior seja acumulado, limpamos o conteúdo do elemento de resultado antes de iniciar a soma
             document.getElementById("resultado").innerHTML = ""
 
+            let resultado = 0;
 
-            for (let i = 0; i <= inputNumber; i += 2) {
-                resultado += i;
+
+            if (inputNumber == 0 || inputNumber == "") {
+                alert("Por favor, insira um número válido.");
+                document.getElementById("resultado").innerHTML = ""
+                return;
+            } else {
+
+                for (let i = 0; i <= inputNumber; i += 2) {
+                    resultado += i;
+                }
+                
                 document.getElementById("resultado").innerHTML = "A soma dos números pares até " + inputNumber + " é: " + resultado;
-            }
 
-            
+            }
         }
+
+
+
+
     </script>
 
 </body>
